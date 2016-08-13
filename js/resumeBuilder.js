@@ -1,59 +1,82 @@
-var name = "Matthew Hardwick";
-var role = "Front-End Web Developer";
-var contactInfo = "matthardwick@gmail.com";
-var bioPic = "images/fry.jpg";
-var welcomeMessage = "Hello!";
-var skills = ["a", "b", "c"];
-
-
-var formattedName = HTMLheaderName.replace("%data%", name);
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-
-
-
 var bio = {
-  "name" : name,
-  "role" : role,
-  "contacts" : {
-    "email" : "matthardwick@gmail.com",
-    "github" : "matthardwick",
+  "name": "Matthew Hardwick",
+  "role": "Front-End Web Developer",
+  "contacts": {
+    "email": "matthardwick@gmail.com",
+    "github": "matthardwick",
+    "location": "Fresno, CA"
   },
-  "bioPic" : bioPic,
-  "welcomeMessage" : welcomeMessage,
-  "skills" : skills
-};
+  "welcomeMessage": "Hello World!",
+  "skills": [
+    "a", "b", "c"
+  ],
+  "bioPic": "images/fry.jpg"
+}
 
+var work = {
+  "jobs": [{
+    "employer": "DerManouel Insurance Group",
+    "title": "Account Manager",
+    "location": "Fresno, CA",
+    "dates": "April 2013 to Present",
+    "description": "Managing a book of dedicated Health Insurance business with responsibilies including Marketing, Enrollment, Escalated Claims Issues, and developing tools to ease the transition into the Affordable Care Act rating system",
+    "license": "California Life and Accident/Health Agent - 0I08142"
+  }, {
+    "employer": "Aetna",
+    "title": "Customer Service Representative",
+    "location": "Fresno, CA",
+    "dates": "January 2008 to April 2013",
+    "description": "Incoming call center",
+  }]
+}
 
-var work = {};
-work.position = "CSA";
-work.employer = "DMIG";
-work.years =  3;
-work.city = "Fresno";
+var projects = {
+  "websites": [{
+    "title": "Where the Garden Grows Preschool",
+    "url": "wtggpreschool.com"
+  }, {
+    "title": "Personal Blog",
+    "url": "mattdhardwick.com"
+  }]
+}
 
-
-var education = {};
-education["name"] = "Reedley";
-education["years"] = 3;
-
-
-$("#main").append(work["position"]);
-$("#main").append(education.name);
 
 var education = {
-  "schools": [
-    {
-      "name": "Reedley",
-      "city": "Reedley, CA",
-      "degree": "Piano"
-    }
-  ],
-  "OnlineCourses": [
-    {
-      "name": "Udacity",
-      "course": "NanoDegree"
-    }
-  ]
+  "Online Courses": [{
+    "name": "Udacity",
+    "type": "Front-End Web Developer NanoDegree"
+  }]
+}
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").append(formattedName);
+$("#header").append(formattedRole);
+
+
+if(bio.skills.length > 0) {
+  $("#header").append(HTMLskillsStart);
+
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+  $("#skills").append(formattedSkill);
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+  $("#skills").append(formattedSkill);
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+  $("#skills").append(formattedSkill);
+}
+
+for(job in work.jobs) {
+  $("#workExperience").append(HTMLworkStart);
+
+  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+  $(".work-entry:last").append(formattedEmployerTitle);
+
+  var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+  $(".work-entry:last").append(formattedDates);
+
+  var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+  $(".work-entry:last").append(formattedDescription);
+
 }
