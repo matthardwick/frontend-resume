@@ -123,10 +123,8 @@ function initializeMap() {
     // initializes an empty array
     var locations = [];
 
-    // changed to iterate through contacts since contacts were put in an array
-    bio.contacts.forEach(function(contact){
-      locations.push(contact.location);
-    });
+    // adds the single location property from bio to the locations array
+    locations.push(bio.contacts.location);
 
     // iterates through school locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
