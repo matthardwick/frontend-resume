@@ -150,12 +150,12 @@ projects.display = function () {
     $(".project-entry:last").append(formattedProjectTitle);
     $(".project-entry:last").append(formattedProjectDates, formattedProjectDescr);
 
-    var fpics = [];
+    var formattedProjectImages = [];
     for (var img = 0; img < projects.projects[i].images.length; img++) {
-      fpics[img] = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
+      formattedProjectImages[img] = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
     }
-    for (var pic = 0; pic < fpics.length; pic++) {
-      $(".project-entry:last").append(fpics[pic]);
+    for (var pic = 0; pic < formattedProjectImages.length; pic++) {
+      $(".project-entry:last").append(formattedProjectImages[pic]);
     }
 
     $(".project-entry:last").append("<hr>");
