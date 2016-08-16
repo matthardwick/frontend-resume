@@ -9,9 +9,21 @@ h3,
 h4,
 h5,
 h6 {
-  padding:0;
-  margin:0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  line-height: 1.75em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Merriweather", 'Times New Roman', Times, serif;
+  text-shadow: -1px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .clear-fix {
@@ -24,9 +36,13 @@ h6 {
   padding: 0 5%;
 }
 
+.project-image {
+  max-width: 500px;
+}
+
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #52a3ed;
   line-height: 48px;
   display: inline;
 }
@@ -37,6 +53,7 @@ h2 {
   color: #999;
   line-height: 29px;
   padding: 10px;
+  text-shadow: -1px 2px 2px rgba(0, 0, 0, 0.15);
 }
 
 h3 {
@@ -57,10 +74,12 @@ h2,
 h3,
 h4,
 h5 {
-  padding:10px 5%;
-
+  padding: 10px 5%;
 }
 
+.footer-start {
+  color: #fff;
+}
 
 .date-text {
   font-style: italic;
@@ -76,7 +95,6 @@ h5 {
   color: #999;
   line-height: 16px;
   float: right;
-
 }
 
 p {
@@ -86,10 +104,15 @@ p {
 }
 
 a {
+  font-size: 1.25em;
   color: #1199c3;
   text-decoration: none;
   margin-top: 10px;
   display: block;
+}
+
+.role {
+  color: #fff;
 }
 
 .welcome-message {
@@ -100,16 +123,16 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #52a3ed;
   display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #52a3ed;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #52a3ed;
 }
 
 .white-text {
@@ -120,7 +143,7 @@ a {
 .gray {
   background-color: #f3f3f3;
   padding-bottom: 10px;
-  clear:both;
+  clear: both;
 }
 
 .dark-gray {
@@ -129,7 +152,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #706f6f;
 }
 
 .flex-box {
@@ -145,15 +168,12 @@ a {
   padding: 2.5% 5%;
 }
 
-ul {
-  list-style-type: none;
-}
-
 .biopic {
   float: left;
   padding: 10px;
   width: 200px;
   display: none;
+  border-radius: 100%;
 }
 
 img {
@@ -173,25 +193,27 @@ span {
 @media only screen and (max-width: 1024px) {
   #lets-connect {
     margin-top: 5%;
-  }
+  };
 }
 
 @media only screen and (max-width:900px) {
   .biopic {
     width: 175px;
-  }
+  };
 }
 
 @media only screen and (max-width: 750px) {
   #lets-connect {
     margin-top: 10%;
   }
+
   .biopic {
     width: 150px;
   }
+
   .welcome-message {
     display: none;
-  }
+  };
 }
 
 #map {
@@ -210,5 +232,5 @@ span {
   #skills-h3,
   .biopic {
     display: block;
-  }
+  };
 }
